@@ -21,10 +21,6 @@ class CourseAPITest(APITestCase):
         response = self.client.post('/subscriptions/', {'course_id': self.course.id})
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(Subscription.objects.count(), 1)
-from rest_framework.test import APITestCase
-from rest_framework import status
-from django.contrib.auth import get_user_model
-from .models import Lesson, Course, Subscription
 
 
 class LessonViewSetAPITest(APITestCase):
